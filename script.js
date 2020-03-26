@@ -55,38 +55,37 @@ const Keyboard = {
       '9',
       '0',
       'backspace',
-      'q',
-      'w',
-      'e',
-      'r',
-      't',
-      'y',
-      'u',
-      'i',
-      'o',
-      'p',
-      'caps',
-      'a',
-      's',
-      'd',
-      'f',
-      'g',
-      'h',
-      'j',
-      'k',
-      'l',
+      'Q',
+      'W',
+      'E',
+      'R',
+      'T',
+      'Y',
+      'U',
+      'I',
+      'O',
+      'P',
+
+      'A',
+      'S',
+      'D',
+      'F',
+      'G',
+      'H',
+      'J',
+      'K',
+      'L',
       'enter',
-      'done',
-      'z',
-      'x',
-      'c',
-      'v',
-      'b',
-      'n',
-      'm',
+      'Z',
+      'X',
+      'C',
+      'V',
+      'B',
+      'N',
+      'M',
       ',',
       '.',
-      '?',
+
       'space'
     ];
 
@@ -97,7 +96,7 @@ const Keyboard = {
 
     keyLayout.forEach(key => {
       const keyElement = document.createElement('button');
-      const insertLineBreak = ['backspace', 'p', 'enter', '?'].indexOf(key) !== -1;
+      const insertLineBreak = ['backspace', 'P', 'enter', '.'].indexOf(key) !== -1;
 
       // Add attributes/classes
       keyElement.setAttribute('type', 'button');
@@ -111,17 +110,6 @@ const Keyboard = {
           keyElement.addEventListener('click', () => {
             this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
             this._triggerEvent('oninput');
-          });
-
-          break;
-
-        case 'caps':
-          keyElement.classList.add('keyboard__key--wide', 'keyboard__key--activatable');
-          keyElement.innerHTML = createIconHTML('keyboard_capslock');
-
-          keyElement.addEventListener('click', () => {
-            this._toggleCapsLock();
-            keyElement.classList.toggle('keyboard__key--active', this.properties.capsLock);
           });
 
           break;
@@ -160,7 +148,7 @@ const Keyboard = {
           break;
 
         default:
-          keyElement.textContent = key.toLowerCase();
+          keyElement.textContent = key.toUpperCase();
 
           keyElement.addEventListener('click', () => {
             this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();

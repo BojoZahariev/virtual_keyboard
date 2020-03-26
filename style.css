@@ -1,10 +1,28 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #007dc6;
+  height: 100vh;
+  background-image: url(images/Bhblue2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  letter-spacing: 0.5px;
+  font-family: 'Lato', sans-serif;
+}
+
 .keyboard {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   padding: 5px 0;
-  background: #004134;
+
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
   transition: bottom 0.4s;
@@ -25,8 +43,8 @@
   margin: 3px;
   border-radius: 4px;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: #004c91;
+  color: #f47321;
   font-size: 1.05rem;
   outline: none;
   cursor: pointer;
@@ -40,7 +58,7 @@
 }
 
 .keyboard__key:active {
-  background: rgba(255, 255, 255, 0.12);
+  background: #ffffff1f;
 }
 
 .keyboard__key--wide {
