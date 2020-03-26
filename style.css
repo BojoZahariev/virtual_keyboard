@@ -22,7 +22,6 @@ body {
   bottom: 0;
   width: 100%;
   padding: 5px 0;
-
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
   transition: bottom 0.4s;
@@ -55,6 +54,7 @@ body {
   padding: 0;
   -webkit-tap-highlight-color: transparent;
   position: relative;
+  font-family: 'Lato', sans-serif;
 }
 
 .keyboard__key:active {
