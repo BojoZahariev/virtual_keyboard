@@ -12,7 +12,7 @@ const Keyboard = {
 
   properties: {
     value: '',
-    capsLock: false
+    capsLock: true
   },
 
   init() {
@@ -65,7 +65,6 @@ const Keyboard = {
       'I',
       'O',
       'P',
-
       'A',
       'S',
       'D',
@@ -85,7 +84,6 @@ const Keyboard = {
       'M',
       ',',
       '.',
-
       'space'
     ];
 
@@ -136,6 +134,7 @@ const Keyboard = {
 
           break;
 
+        /*
         case 'done':
           keyElement.classList.add('keyboard__key--wide', 'keyboard__key--dark');
           keyElement.innerHTML = createIconHTML('check_circle');
@@ -146,7 +145,7 @@ const Keyboard = {
           });
 
           break;
-
+        */
         default:
           keyElement.textContent = key.toUpperCase();
 
@@ -171,16 +170,6 @@ const Keyboard = {
   _triggerEvent(handlerName) {
     if (typeof this.eventHandlers[handlerName] == 'function') {
       this.eventHandlers[handlerName](this.properties.value);
-    }
-  },
-
-  _toggleCapsLock() {
-    this.properties.capsLock = !this.properties.capsLock;
-
-    for (const key of this.elements.keys) {
-      if (key.childElementCount === 0) {
-        key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
-      }
     }
   },
 
