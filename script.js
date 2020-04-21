@@ -75,6 +75,7 @@ const Keyboard = {
       'K',
       'L',
       'enter',
+      'done',
       'Z',
       'X',
       'C',
@@ -134,7 +135,6 @@ const Keyboard = {
 
           break;
 
-        /*
         case 'done':
           keyElement.classList.add('keyboard__key--wide', 'keyboard__key--dark');
           keyElement.innerHTML = createIconHTML('check_circle');
@@ -145,7 +145,7 @@ const Keyboard = {
           });
 
           break;
-        */
+
         default:
           keyElement.textContent = key.toUpperCase();
 
