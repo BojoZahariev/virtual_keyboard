@@ -74,7 +74,7 @@ const Keyboard = {
       'J',
       'K',
       'L',
-      'enter',
+
       'done',
       'Z',
       'X',
@@ -95,7 +95,7 @@ const Keyboard = {
 
     keyLayout.forEach(key => {
       const keyElement = document.createElement('button');
-      const insertLineBreak = ['backspace', 'P', 'enter', '.'].indexOf(key) !== -1;
+      const insertLineBreak = ['backspace', 'P', 'L', '.'].indexOf(key) !== -1;
 
       // Add attributes/classes
       keyElement.setAttribute('type', 'button');
@@ -108,17 +108,6 @@ const Keyboard = {
 
           keyElement.addEventListener('click', () => {
             this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
-            this._triggerEvent('oninput');
-          });
-
-          break;
-
-        case 'enter':
-          keyElement.classList.add('keyboard__key--wide');
-          keyElement.innerHTML = createIconHTML('keyboard_return');
-
-          keyElement.addEventListener('click', () => {
-            this.properties.value += '\n';
             this._triggerEvent('oninput');
           });
 
